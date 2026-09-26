@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Daniela Acevedo — Junior .NET Developer in Costa Rica, building web applications with C#, ASP.NET Core and SQL Server." />
+  <title>Daniela Acevedo | Junior .NET Developer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236c3db5'/%3E%3Cpath d='M20 17h12c10 0 16 6 16 15s-6 15-16 15h-5v8h-7V17Zm7 7v16h5c5 0 8-3 8-8s-3-8-8-8h-5Z' fill='white'/%3E%3C/svg%3E" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+    :root { --ink:#191522; --muted:#625b70; --purple:#6d3db4; --violet:#a176e5; --lav:#f4effc; --line:#dfd6ed; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Manrope,Arial,sans-serif; color:var(--ink); background:#fcfbfe; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1120px; margin:auto; padding:0 28px; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:-.05em; font-size:1rem; }
+    .brand-mark { position:relative; display:grid; place-items:center; width:42px; height:42px; border-radius:11px; background:var(--purple); color:#fff; font:700 .8rem 'DM Mono'; letter-spacing:-.08em; }
+    .brand-mark::after { content:"✦"; position:absolute; right:-8px; top:-9px; color:var(--violet); font-size:.85rem; }
+    .navlinks { display:flex; gap:24px; font-size:.88rem; font-weight:700; color:var(--muted); }
+    .hero { min-height:590px; display:grid; grid-template-columns:1.25fr .75fr; gap:70px; align-items:center; padding:62px 0 86px; margin:0; }
+    .eyebrow { font:500 .76rem 'DM Mono',monospace; color:var(--purple); letter-spacing:.08em; text-transform:uppercase; }
+    h1 { font-size:clamp(3rem,7vw,5.8rem); letter-spacing:-.075em; line-height:.98; margin:16px 0 26px; max-width:780px; }
+    h1 em { color:var(--purple); font-style:normal; }
+    .lead { max-width:600px; color:var(--muted); font-size:1.08rem; margin:0 0 32px; }
+    .actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .button { display:inline-flex; align-items:center; justify-content:center; padding:13px 20px; border-radius:9px; font-weight:800; font-size:.9rem; transition:.2s; }
+    .primary { background:var(--purple); color:#fff; } .primary:hover{background:#572a98; transform:translateY(-2px)}
+    .secondary { border:1px solid var(--line); background:#fff; } .secondary:hover{border-color:var(--purple)}
+    .availability { display:inline-flex; align-items:center; gap:9px; margin-top:12px; font:500 .74rem 'DM Mono'; color:var(--purple); letter-spacing:.06em; text-transform:uppercase; }
+    .availability::before { content:""; width:7px; height:7px; border-radius:50%; background:#55ae83; }
+    .hero-name { display:block; font-size:clamp(3.6rem,6.2vw,5.5rem); color:var(--ink); }
+    .hero-title { display:block; color:var(--purple); font-size:clamp(1.35rem,2.4vw,2rem); letter-spacing:-.05em; margin-top:16px; }
+    .sidecard { background:linear-gradient(145deg,#2e174f,#8350c6); color:#fff; border-radius:26px; padding:36px; box-shadow:20px 22px 0 #eadffd; }
+    .sidecard .label { color:#d8bdfc; font:500 .74rem 'DM Mono'; text-transform:uppercase; letter-spacing:.1em; }
+    .sidecard h2 { font-size:1.8rem; letter-spacing:-.055em; line-height:1.15; margin:24px 0; }
+    .stat { border-top:1px solid #9e7acb; padding-top:17px; margin-top:17px; display:flex; justify-content:space-between; font-size:.9rem; } .stat strong{font-size:1.1rem}
+    .portrait { border-radius:50% 50% 46% 46% / 38% 38% 62% 62%; overflow:hidden; background:#eadffd; box-shadow:18px 20px 0 #eadffd; min-height:465px; }
+    .portrait img { width:100%; height:100%; min-height:465px; object-fit:cover; object-position:center top; display:block; }
+    .developer-card { background:#2e174f; color:#fff; border-radius:22px; padding:32px; box-shadow:18px 20px 0 #eadffd; }
+    .developer-card .eyebrow{font-size:.7rem;color:#cfaeff}.developer-card h2{font-size:1.7rem;letter-spacing:-.06em;line-height:1.1;margin:9px 0}.developer-card > p{margin:0;color:#d9c8f1;font-size:.9rem}.dev-lines{border-top:1px solid #76559c;margin-top:25px;padding-top:6px}.dev-line{display:flex;gap:12px;padding:14px 0 8px}.dev-line b{font:500 .7rem 'DM Mono';color:#cfaeff;min-width:28px}.dev-line strong{display:block;font-size:.88rem;line-height:1.2}.dev-line span{display:block;color:#d9c8f1;font-size:.76rem;margin-top:3px}.journey{display:none}
+    section { padding:86px 0; border-top:1px solid var(--line); }
+    .section-title { margin:0 0 34px; font-size:clamp(1.8rem,3vw,2.5rem); letter-spacing:-.06em; line-height:1.08; }
+    .grid-two { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+    .text { color:var(--muted); max-width:620px; }
+    .chips { display:flex; flex-wrap:wrap; gap:9px; align-content:start; }
+    .chip { display:inline-flex; align-items:center; white-space:nowrap; padding:8px 11px; border:1px solid var(--line); background:#fff; border-radius:7px; font:500 .77rem 'DM Mono'; color:#493b5c; }
+    .roles { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .role { padding:24px; min-height:185px; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    .role .num { color:var(--violet); font:500 .75rem 'DM Mono'; } .role h3{font-size:1.05rem; letter-spacing:-.03em; margin:16px 0 8px}.role p{font-size:.88rem;color:var(--muted);margin:0}.role p[style*="margin-top:15px"]{display:flex;flex-wrap:wrap;gap:6px}
+    .experience { border-left:3px solid var(--purple); padding:5px 0 5px 24px; }
+    .experience h3 { margin:0; font-size:1.12rem; letter-spacing:-.035em; }.experience .meta{font:500 .8rem 'DM Mono';color:var(--purple);margin:5px 0 12px}.experience p{margin:0;color:var(--muted);max-width:760px}
+    .contact { background:#2e174f; border-radius:20px; padding:52px; color:#fff; }
+    .contact h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.07em;line-height:1;margin:10px 0 14px}.contact > p{color:#d9c8f1; margin:0; max-width:690px}
+    .contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:40px; text-align:left; border-top:1px solid #77559e; }
+    .contact-card { padding:25px 24px 8px 0; min-width:0; }
+    .contact-card + .contact-card { border-left:1px solid #77559e; padding-left:24px; }
+    .contact-icon { color:#cfaeff; font:500 .78rem 'DM Mono'; letter-spacing:.1em; text-transform:uppercase; margin:0 0 18px; }
+    .contact-card h3 { margin:0 0 7px; font-size:1.05rem; letter-spacing:-.03em; }
+    .contact-link { color:#fff; font-weight:800; font-size:.9rem; border-bottom:1px solid #b995ee; padding-bottom:2px; }
+    .contact-link:hover { color:#d7baff; }.contact-detail{margin:10px 0 0;color:#c4aedf;font-size:.75rem;word-break:break-word}
+    footer { padding:32px 0; color:var(--muted); font-size:.8rem; display:flex; justify-content:space-between; gap:12px; }
+    @media(max-width:760px){.wrap{padding:0 20px}.navlinks{display:none}.hero,.grid-two{grid-template-columns:1fr;gap:36px}.hero{padding:42px 0 64px;margin:0;min-height:auto}.sidecard{padding:28px}.roles,.projects-grid,.contact-grid{grid-template-columns:1fr}.contact{padding:36px 25px}.contact-card,.contact-card + .contact-card{padding:20px 0;border-left:0}.contact-card + .contact-card{border-top:1px solid #77559e}.contact .button{margin-top:24px}section{padding:64px 0}footer{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav><a class="brand" href="#top"><span class="brand-mark">DA</span><span>Daniela Acevedo</span></a><div class="navlinks"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav>
+    <main id="top">
+      <div class="hero">
+        <div><div class="eyebrow">San José, Costa Rica</div><div class="availability">Open to junior developer opportunities</div><h1><span class="hero-name">Daniela<br>Acevedo</span><span class="hero-title">Junior .NET Developer</span></h1><p class="lead">I build clear, reliable web applications with C#, ASP.NET Core, SQL Server and JavaScript—always with the user’s real workflow in mind.</p><div class="actions"><a class="button primary" href="#projects">View my projects</a><a class="button secondary" href="#contact">Contact me</a></div></div>
+        <aside class="developer-card"><div class="eyebrow">Current focus</div><h2>Building useful software.</h2><p>From database-backed systems to practical interfaces.</p><div class="dev-lines"><div class="dev-line"><b>01</b><div><strong>Development</strong><span>C# · ASP.NET · SQL Server</span></div></div><div class="dev-line"><b>02</b><div><strong>Experience</strong><span>Enterprise technical support</span></div></div><div class="dev-line"><b>03</b><div><strong>Education</strong><span>Computer Engineering · Oct 2026</span></div></div></div></aside>
+      </div>
+      <section id="about"><div class="grid-two"><div><div class="eyebrow">01 / About me</div><h2 class="section-title">I build solutions around real workflows.</h2><p class="text">I’m a Computer Engineering graduate candidate focused on web development. Through academic and real-business projects, I’ve built applications with CRUD workflows, validation, business logic and relational databases. My enterprise support background adds structured problem-solving, collaboration and a user-centered perspective to the way I develop.</p></div><div class="chips"><span class="chip">C#</span><span class="chip">ASP.NET Core/MVC</span><span class="chip">SQL Server</span><span class="chip">Entity Framework</span><span class="chip">JavaScript</span><span class="chip">REST APIs</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span><span class="chip">Git</span><span class="chip">Object-oriented programming</span><span class="chip">Relational databases</span></div></div></section>
+      <section><div class="eyebrow">02 / What I build</div><h2 class="section-title">From database design to usable web experiences.</h2><div class="roles"><article class="role"><div class="num">01</div><h3>Web applications</h3><p>Building structured applications with C#, ASP.NET Core/MVC and JavaScript around real user needs.</p></article><article class="role"><div class="num">02</div><h3>Business workflows</h3><p>Translating processes into CRUD features, data validation, rules and approval flows.</p></article><article class="role"><div class="num">03</div><h3>Data persistence</h3><p>Designing and managing relational data with SQL Server and Entity Framework.</p></article></div></section>
+      <section id="projects"><div class="eyebrow">03 / Selected projects</div><h2 class="section-title">Built to solve real workflows.</h2><div class="projects-grid"><article class="role"><div class="num">01 · Full stack</div><h3>WebAdminSystem</h3><p>Administrative website for a family business. Built as an academic project with a focus on structured data management and maintainable architecture.</p><p style="margin-top:15px"><span class="chip">C#</span> <span class="chip">ASP.NET MVC</span> <span class="chip">.NET</span> <span class="chip">SQL Server</span></p><p style="margin-top:20px"><a class="contact-link" style="color:var(--purple);margin-right:16px" href="http://webadminsystem.runasp.net/" target="_blank" rel="noreferrer">Live demo</a><a class="contact-link" style="color:var(--purple)" href="https://github.com/dacevedocubillo/WebAdminSystem" target="_blank" rel="noreferrer">View code</a></p></article><article class="role"><div class="num">02 · Front end</div><h3>Alura Geek</h3><p>Responsive front-end music store featuring album collections, category navigation, live search, interactive product previews, a matching account experience and mobile-friendly layouts.</p><p style="margin-top:15px"><span class="chip">HTML</span> <span class="chip">CSS</span> <span class="chip">JavaScript</span> <span class="chip">Responsive Design</span></p><p style="margin-top:20px"><a class="contact-link" style="color:var(--purple);margin-right:16px" href="https://dacevedocubillo.github.io/Alura-Geek/" target="_blank" rel="noreferrer">Live demo</a><a class="contact-link" style="color:var(--purple)" href="https://github.com/dacevedocubillo/Alura-Geek" target="_blank" rel="noreferrer">View code</a></p></article><article class="role"><div class="num">03 · React</div><h3>SmartBank Dashboard</h3><p>Responsive personal-finance dashboard with light and dark themes, balance-visibility controls, category filters, spending summaries and budget progress.</p><p style="margin-top:15px"><span class="chip">React</span> <span class="chip">JavaScript</span> <span class="chip">CSS</span> <span class="chip">Responsive Design</span></p><p style="margin-top:20px"><a class="contact-link" style="color:var(--purple);margin-right:16px" href="https://dacevedocubillo.github.io/smartbank-react-dashboard/" target="_blank" rel="noreferrer">Live demo</a><a class="contact-link" style="color:var(--purple)" href="https://github.com/dacevedocubillo/smartbank-react-dashboard" target="_blank" rel="noreferrer">View code</a></p></article></div></section>
+      <section id="experience"><div class="eyebrow">04 / Professional experience</div><h2 class="section-title">A technical foundation beyond code.</h2><article class="experience"><h3>Service Desk Agent, Application Support · Fujitsu</h3><div class="meta">Nov 2023 – Aug 2026 · Costa Rica</div><p>Managed enterprise incidents and service requests through ServiceNow, performed structured troubleshooting and collaborated with development and infrastructure teams on escalated application issues. This experience strengthened the problem-solving, documentation and user perspective I bring to software development.</p></article></section>
+      <section><div class="grid-two"><div><div class="eyebrow">05 / Education</div><h2 class="section-title">Computer Engineering.</h2><p class="text">Bachelor’s Degree in Computer Engineering · Universidad Castro Carazo<br><strong>Academic requirements completed · Graduation expected October 2026</strong><br><br>Technician in Web Development · Universidad Técnica Nacional · 2021–2022</p></div><div><div class="eyebrow">What I’m looking for</div><p class="text">Junior .NET Developer, Junior Software Developer, Web Developer or Backend Developer opportunities—on-site, hybrid or remote. Spanish: Native · English: B2 / Upper-Intermediate.</p></div></div></section>
+      <section id="contact"><div class="contact"><div class="eyebrow" style="color:#cfaeff">Open to junior development opportunities · Costa Rica</div><h2>Let’s connect.</h2><p>I’m looking for a junior software development opportunity where I can contribute with my .NET skills, keep learning and grow with a collaborative team.</p><div class="contact-grid"><article class="contact-card"><div class="contact-icon">01 / Email</div><h3>Start a conversation</h3><a class="contact-link" href="mailto:dacevedocubillo@gmail.com?subject=Opportunity%20for%20Daniela">Send an email</a><p class="contact-detail">dacevedocubillo@gmail.com</p></article><article class="contact-card"><div class="contact-icon">02 / GitHub</div><h3>See my work</h3><a class="contact-link" href="https://github.com/dacevedocubillo" target="_blank" rel="noreferrer">View profile</a><p class="contact-detail">github.com/dacevedocubillo</p></article><article class="contact-card"><div class="contact-icon">03 / LinkedIn</div><h3>Connect professionally</h3><a class="contact-link" href="https://www.linkedin.com/in/daniela-acevedo-cubillo/" target="_blank" rel="noreferrer">Connect on LinkedIn</a><p class="contact-detail">linkedin.com/in/daniela-acevedo-cubillo</p></article></div></div></section>
+    </main>
+    <footer><span>© 2026 Daniela Acevedo</span><span>Junior .NET Developer · Software Development</span></footer>
+  </div>
+</body>
+</html>
